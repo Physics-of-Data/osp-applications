@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>OpenSourcePhysics Applications</title>
+    <style>
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+      }
+      .container {
+        background: white;
+        border-radius: 12px;
+        padding: 40px;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      }
+      h1 {
+        color: #333;
+        font-size: 2.5em;
+        margin-bottom: 10px;
+        border-bottom: 4px solid #667eea;
+        padding-bottom: 15px;
+      }
+      .subtitle {
+        color: #666;
+        font-size: 1.2em;
+        margin-bottom: 40px;
+      }
+      .app-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 25px;
+        margin-top: 30px;
+      }
+      .app-card {
+        background: white;
+        border: 2px solid #e0e0e0;
+        border-radius: 10px;
+        padding: 25px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      .app-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+      }
+      .app-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        border-color: #667eea;
+      }
+      .app-card h3 {
+        margin-top: 0;
+        color: #667eea;
+        font-size: 1.5em;
+        margin-bottom: 15px;
+      }
+      .app-card p {
+        color: #555;
+        line-height: 1.7;
+        margin-bottom: 20px;
+      }
+      .app-features {
+        list-style: none;
+        padding: 0;
+        margin: 15px 0;
+      }
+      .app-features li {
+        color: #666;
+        padding: 5px 0;
+        padding-left: 25px;
+        position: relative;
+      }
+      .app-features li::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: #4CAF50;
+        font-weight: bold;
+      }
+      .app-link {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 12px 30px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+      .app-link:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+      }
+      footer {
+        margin-top: 50px;
+        padding-top: 30px;
+        border-top: 2px solid #e0e0e0;
+        text-align: center;
+        color: #666;
+      }
+      footer a {
+        color: #667eea;
+        text-decoration: none;
+      }
+      footer a:hover {
+        text-decoration: underline;
+      }
+      .badge {
+        display: inline-block;
+        padding: 4px 12px;
+        background: #e3f2fd;
+        color: #1976d2;
+        border-radius: 12px;
+        font-size: 0.85em;
+        font-weight: 600;
+        margin-right: 8px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🔬 Physics Simulations</h1>
+      <p class="subtitle">
+        Interactive computational physics applications powered by OpenSourcePhysics and CheerpJ.
+        Run complex Java simulations directly in your browser - no installation required!
+      </p>
+
+      <div class="app-grid">
+        <!-- SHO EJS App -->
+        <div class="app-card">
+          <h3>SHO with EJS Controls</h3>
+          <p>
+            Simple Harmonic Oscillator with modern EJS (Easy Java Simulations) controls.
+            Explore oscillatory motion with an intuitive graphical interface.
+          </p>
+          <ul class="app-features">
+            <li>Multiple ODE solvers (Euler, Verlet, RK4)</li>
+            <li>Real-time position plotting</li>
+            <li>Error analysis visualization</li>
+            <li>Interactive parameter controls</li>
+          </ul>
+          <div>
+            <span class="badge">Mechanics</span>
+            <span class="badge">ODE</span>
+            <span class="badge">EJS</span>
+          </div>
+          <a href="apps/sho-ejs/" class="app-link">Launch Application →</a>
+        </div>
+
+        <!-- Fixed Step -->
+        <div class="app-card">
+          <h3>Fixed-Step ODE Solver</h3>
+          <p>
+            Advanced SHO simulation focusing on fixed-step numerical methods.
+            Compare solver accuracy and performance with detailed metrics.
+          </p>
+          <ul class="app-features">
+            <li>9 different ODE solvers</li>
+            <li>Semi-log error plots</li>
+            <li>Relative vs absolute errors</li>
+            <li>Real-time computation counter</li>
+          </ul>
+          <div>
+            <span class="badge">Numerical Methods</span>
+            <span class="badge">Analysis</span>
+          </div>
+          <a href="apps/fixed-step/" class="app-link">Launch Application →</a>
+        </div>
+
+        <!-- Fixed Step Error Log -->
+        <div class="app-card">
+          <h3>Fixed-Step with Error Logging</h3>
+          <p>
+            Complete error analysis suite with comprehensive data logging.
+            Professional tool for studying numerical integration accuracy.
+          </p>
+          <ul class="app-features">
+            <li>Full error logging table</li>
+            <li>Multiple plot windows</li>
+            <li>Configurable logging intervals</li>
+            <li>CSV-exportable data tables</li>
+          </ul>
+          <div>
+            <span class="badge">Research Tool</span>
+            <span class="badge">Data Export</span>
+          </div>
+          <a href="apps/fixed-step-error/" class="app-link">Launch Application →</a>
+        </div>
+      </div>
+
+      <footer>
+        <p>
+          <strong>Built with:</strong>
+          <a href="https://www.compadre.org/osp/" target="_blank">OpenSourcePhysics</a> •
+          <a href="https://cheerpj.com/" target="_blank">CheerpJ</a> •
+          <a href="https://github.com/Physics-of-Data" target="_blank">Physics of Data</a>
+        </p>
+        <p style="margin-top: 10px; font-size: 0.9em; color: #999;">
+          All applications run entirely in your browser using WebAssembly technology.
+          No server-side processing required.
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
